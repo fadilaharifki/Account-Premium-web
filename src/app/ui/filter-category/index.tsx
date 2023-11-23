@@ -1,28 +1,10 @@
 import PenaIcon from "@/app/assets/svg/pena";
 import Button from "../button";
+import { listCategory } from "./constanta";
 
 interface FilterCategoryProps {}
 
 const FilterCategory: React.FC<FilterCategoryProps> = () => {
-  const listCategory = [
-    {
-      name: "cocktail",
-      label: "Cocktail",
-    },
-    {
-      name: "shooters",
-      label: "Shooters",
-    },
-    {
-      name: "premium_spirits",
-      label: "Premium Spirits",
-    },
-    {
-      name: "non_alcoholic_beverages",
-      label: "Non-Alcoholic Beverages",
-    },
-  ];
-
   return (
     <div className="flex items-center bg-[#1E1E1E] my-4 py-4 px-6 rounded-lg">
       <div className="flex px-2">Category</div>
