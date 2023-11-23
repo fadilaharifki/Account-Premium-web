@@ -107,7 +107,7 @@ const Product: React.FC<ProductProps> = () => {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid max-[640px]:grid-cols-1 max-[768px]:grid-cols-2 max-[1024px]:grid-cols-2 grid-cols-4 gap-4">
       {listProduct?.map((item, idx) => {
         return <Card key={idx} item={item} />;
       })}

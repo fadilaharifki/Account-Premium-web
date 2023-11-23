@@ -12,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children, header }) => {
   };
   return (
     <div className="flex min-h-screen w-full justify-center items-center">
-      <div className="flex min-h-screen w-5/6 flex-col">
+      <div className="flex min-h-screen max-[640px]:w-11/12 max-[768px]:gw-10/12 max-[1024px]:gw-10/12 w-5/6 flex-col">
         <div>
           <Header backBtn={header?.backBtn} title={header?.title} nextBtn={header?.nextBtn} />
         </div>
