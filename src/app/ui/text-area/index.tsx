@@ -1,4 +1,5 @@
 import React, { ChangeEvent, ReactNode } from "react";
+import { Control, RegisterOptions, useController } from "react-hook-form";
 
 interface TextAreaProps {
   name: string;
@@ -10,9 +11,19 @@ interface TextAreaProps {
   rows?: number;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  rules: RegisterOptions;
+  defaultValue?: string;
+  control: Control<any>;
 }
 
-const TextArea: React.FC<TextAreaProps> = ({ name, label, rows, prefix, suffix, required = false, value, onChange, placeholder }) => {
+const TextArea: React.FC<TextAreaProps> = ({ control, defaultValue, name, rules, label, rows, prefix, suffix, required = false, value, onChange, placeholder }) => {
+  const { field, fieldState } = useController({
+    control,
+    defaultValue,
+    name,
+    rules,
+  });
+
   return (
     <div className="w-full mb-5">
       <label className="block text-[#C9CACB] text-sm font-bold mb-2">
@@ -24,13 +35,21 @@ const TextArea: React.FC<TextAreaProps> = ({ name, label, rows, prefix, suffix, 
             <span className="text-gray-500">{prefix}</span>
           </div>
         )}
-        <textarea rows={rows} className={`w-full flex ${prefix ? "pl-12" : "pl-4"} ${suffix ? "pr-12" : "pr-4"} border bg-[#1A1A1A] rounded-md py-2 leading-tight focus:outline-none focus:border-[#AA5AFA]`} placeholder={placeholder} />
+        <textarea
+          onChange={(e) => {
+            field.onChange(e.target.value);
+          }}
+          rows={rows}
+          className={`w-full flex ${prefix ? "pl-12" : "pl-4"} ${suffix ? "pr-12" : "pr-4"} border bg-[#1A1A1A] rounded-md py-2 leading-tight focus:outline-none focus:border-[#AA5AFA]`}
+          placeholder={placeholder}
+        />
         {suffix && (
           <div className="absolute inset-y-0 right-0 flex items-center pr-3">
             <span className="text-gray-500">{suffix}</span>
           </div>
         )}
       </div>
+      <div>{fieldState?.error && <div className="text-red-500 py-2 text-sm">{fieldState?.error?.message}</div>}</div>
     </div>
   );
 };

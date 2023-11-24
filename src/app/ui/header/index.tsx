@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ backBtn, nextBtn, title }) => {
     <div className="flex w-full justify-between max-[768px]:h-16 h-24 items-center">
       <div>
         {backBtn && (
-          <div className="flex max-[768px]:hidden justify-center items-center">
+          <div className="flex max-[768px]:hidden justify-center items-center cursor-pointer">
             <div className="px-2 justify-center items-center">
               <BackArrowIcon width={25} height={25} />
             </div>

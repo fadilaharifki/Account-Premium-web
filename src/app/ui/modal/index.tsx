@@ -9,7 +9,7 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ children, isOpen, onClose, title = "Modal" }: ModalProps) => {
   return (
-    <div className={`fixed inset-0 ${isOpen ? "flex" : "hidden"} items-center justify-center`}>
+    <div className={`fixed z-50 inset-0 ${isOpen ? "flex" : "hidden"} items-center justify-center overflow-auto max-[640px]:pt-96 `}>
       <div className="absolute bg-black opacity-50 inset-0" onClick={onClose}></div>
       <div className="bg-[#222222] p-4 z-10 min-w-[35%] rounded-lg">
         <div className="flex justify-end">
@@ -19,7 +19,7 @@ const Modal: React.FC<ModalProps> = ({ children, isOpen, onClose, title = "Modal
             </svg>
           </button>
         </div>
-        <div className="text-lg text-center font-bold mb-5">{title}</div>
+        <div className="text-lg text-center  font-bold mb-5">{title}</div>
         {children}
       </div>
     </div>
