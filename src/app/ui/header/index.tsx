@@ -12,10 +12,10 @@ export interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ backBtn, nextBtn, title }) => {
   return (
-    <div className="flex w-full justify-between h-24 items-center">
+    <div className="flex w-full justify-between max-[768px]:h-16 h-24 items-center">
       <div>
         {backBtn && (
-          <div className="flex justify-center items-center">
+          <div className="flex max-[768px]:hidden justify-center items-center">
             <div className="px-2 justify-center items-center">
               <BackArrowIcon width={25} height={25} />
             </div>

@@ -5,11 +5,6 @@ export const dummyMenus = [
     isActive: false,
   },
   {
-    label: "Nightclub Profile",
-    name: "nightclub_profile",
-    isActive: false,
-  },
-  {
     label: "Featured",
     name: "featured",
     isActive: false,

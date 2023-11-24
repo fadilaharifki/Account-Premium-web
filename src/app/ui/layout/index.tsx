@@ -1,4 +1,4 @@
-import Footer from "../footer";
+import Footer from "../navbar";
 import Header, { HeaderProps } from "../header";
 
 interface LayoutProps {

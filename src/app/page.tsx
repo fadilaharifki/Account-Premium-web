@@ -4,7 +4,7 @@ import DownloadIcon from "./assets/svg/download";
 import ProductIcon from "./assets/svg/product";
 import Button from "./ui/button";
 import FilterCategory from "./ui/filter-category";
-import Footer from "./ui/footer";
+import Navbar from "./ui/navbar";
 import Layout from "./ui/layout";
 import Product from "./ui/product";
 import Search from "./ui/search";
@@ -12,6 +12,7 @@ import Search from "./ui/search";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
+      <Navbar />
       <Layout
         header={{
           backBtn: true,
@@ -36,7 +37,6 @@ export default function Home() {
           <Product />
         </div>
       </Layout>
-      <Footer />
     </main>
   );
 }
