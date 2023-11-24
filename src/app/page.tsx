@@ -11,7 +11,7 @@ import Search from "./ui/search";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col text-white">
       <Navbar />
       <Layout
         header={{
