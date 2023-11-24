@@ -28,7 +28,9 @@ export default function Home() {
       >
         <div className="flex justify-between ">
           <Search />
-          <Button prefix={<DownloadIcon />}>Import</Button>
+          <Button className="border-[1px] border-white" prefix={<DownloadIcon />}>
+            Import
+          </Button>
         </div>
         <div>
           <FilterCategory />

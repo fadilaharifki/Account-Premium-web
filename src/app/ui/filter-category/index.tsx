@@ -13,15 +13,15 @@ const FilterCategory: React.FC<FilterCategoryProps> = () => {
           {listCategory.map((list, idx) => {
             return (
               <div className="flex items-center " key={idx}>
-                <div key={idx} className="flex w-full px-1">
-                  <Button className="rounded-xl flex w-full hover:bg-[#AB5CFA]">{list.label}</Button>
+                <div key={idx} className="flex w-full px-2">
+                  <Button className="rounded-xl flex w-full hover:bg-[#AB5CFA] border-[1px] border-white">{list.label}</Button>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-      <div className="flex px-1 cursor-pointer justify-center">
+      <div className="flex px-5 cursor-pointer justify-center">
         <PenaIcon />
       </div>
     </div>
