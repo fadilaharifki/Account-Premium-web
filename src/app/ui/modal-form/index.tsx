@@ -35,7 +35,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose, title = "Modal F
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={title}>
       <form onSubmit={handleSubmit}>
-        <div className="flex">
+        <div className="flex max-[640px]:flex-col">
           <div className="flex w-full mr-2">
             <TextInput
               name="product_name"
@@ -48,7 +48,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose, title = "Modal F
               }}
             />
           </div>
-          <div className="w-full ml-2">
+          <div className="w-full ml-2 max-[640px]:ml-0">
             <TextInput
               name="menu_code"
               label="Menu code"
@@ -87,7 +87,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose, title = "Modal F
             }}
           />
         </div>
-        <div className="flex">
+        <div className="flex max-[640px]:flex-col">
           <div className="flex w-full mr-2">
             <TextInput
               name="price"
@@ -101,7 +101,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose, title = "Modal F
               }}
             />
           </div>
-          <div className="flex w-full ml-2">
+          <div className="flex w-full ml-2 max-[640px]:ml-0">
             <TextInput
               name="discount_price)"
               label="Discount price"
@@ -147,7 +147,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose, title = "Modal F
             Submit
           </button>
         </div> */}
-        <Button className="w-full h-10 bg-gradient-to-r from-[#AB5CFA] to-[#C801CC] border-0">Add product</Button>
+        <Button className="w-full h-10 bg-gradient-to-r border-0 from-[#AB5CFA] to-[#C801CC] border-transparent hover:from-[#914ad8] hover:to-[#9d1b9f]">Add product</Button>
       </form>
     </Modal>
   );
